@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+.admin-layout__container {
+  min-height: 100vh !important;
+  .admin-layout__content {
+    padding: 50px 50px 0;
+    margin-top: 64px;
+    .admin-layout-background {
+      background: $white;
+      min-height: 75vh;
+      padding: 20px;
+    }
+  }
+}

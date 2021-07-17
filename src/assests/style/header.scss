@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+.header__container {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  .logo {
+    height: 80%;
+  }
+  .account {
+    color: $white;
+    font-size: 20px;
+    float: right;
+  }
+}

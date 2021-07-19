@@ -44,8 +44,12 @@ const PickList = () => {
         <Row justify="center" gutter={[0, 24]} >
           {
             imagesPick.map((img) => (
-              <Col xs={24} sm={12} md={8} xl={8} lg={8} > 
-                <PickItem img={img} key={img.id} />
+              <Col xs={24} sm={12} md={12} xl={8} lg={8} > 
+                <Row justify="center" >
+                  <Col span={24} >
+                    <PickItem img={img} key={img.id} />
+                  </Col>
+                </Row>
               </Col>
             ))
           }

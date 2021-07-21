@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Row, Col } from 'antd';
 import PickItem from './PickItem';
-import { BetMoneyModal } from './BetMoneyModal';
 
 const PickList = () => {
   const [imagesPick, setImagesPick] = useState([
@@ -46,7 +45,7 @@ const PickList = () => {
             imagesPick.map((img) => (
               <Col xs={24} sm={12} md={12} xl={8} lg={8} > 
                 <Row justify="center" >
-                  <Col span={24} >
+                  <Col span={20} offset={2} >
                     <PickItem img={img} key={img.id} />
                   </Col>
                 </Row>

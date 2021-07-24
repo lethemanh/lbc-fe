@@ -1,0 +1,34 @@
+$bg-game-color: #77b3d4c7;
+
+.game {
+    background-color: $bg-game-color;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 10px;
+    padding: 55px 20px 50px 20px;
+    margin-top: 30px;
+    &-pick-select {
+    margin: 2px;
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    position: relative;
+    margin: 30px 10px;
+        &-img {
+            position: absolute;
+            width: 170px;
+            cursor: pointer;
+            box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.25);
+            border-radius: 10px;
+            transition: 0.35s;
+            &:hover {
+                box-shadow: -2px 2px 2px 2px rgba(0,0,0,0.45);
+                width: 175px;
+                transition: 0.35s;
+            }
+        }
+    }
+}
+

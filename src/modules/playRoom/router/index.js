@@ -7,7 +7,7 @@ const authRoutes = [
     name: 'PlayRoom',
     component: PlayRoom,
     meta: {
-      requireAuth: true,
+      requireAuth: false,
       layout: MainLayout
     }
   }

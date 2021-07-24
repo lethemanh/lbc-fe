@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Modal, Input } from 'antd';
 
 const PickItem = ({ img }) => {
@@ -15,12 +15,11 @@ const PickItem = ({ img }) => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-  
 
   return (
     <>
-      <div class="select"  onClick={showModal} >                
-        <input type="image" className="img-select" src={img.src} alt="" name="" value={img.value} />
+      <div className="game-pick-select" onClick={showModal} >                
+        <input type="image" className="game-pick-select-img" src={img.src} alt="" value={img.value} />
       </div>
 
       <Modal title="Bạn muốn cược bao nhiêu?" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>

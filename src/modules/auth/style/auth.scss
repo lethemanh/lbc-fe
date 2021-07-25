@@ -1,0 +1,15 @@
+.auth-container {
+  min-height: 100vh !important;
+  width: 100%;
+  padding-top: 50px;
+  .logo {
+    width: 100%;
+  }
+  .auth-title {
+    text-align: center;
+  }
+  .register-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+} 

@@ -1,5 +1,5 @@
 import { Layout } from 'antd';
-import '../../assests/style/footer.scss';
+import '../../assets/style/footer.scss';
 
 export default function Footer() {
   return (

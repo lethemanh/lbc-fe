@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Layout, Dropdown, Menu } from 'antd';
 import { LogoutOutlined, DownOutlined } from '@ant-design/icons';
-import '../../assests/style/header.scss';
-import logo from '../../assests/images/logo.jpeg';
+import '../../assets/style/header.scss';
+import logo from '../../assets/images/logo.jpeg';
 
 export default function Header() {
   const [currentUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {});

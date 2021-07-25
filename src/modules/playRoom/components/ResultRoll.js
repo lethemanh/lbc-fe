@@ -1,7 +1,7 @@
 import { MASCOTS } from '../../../core/constants/mascots';
-import imgTom from '../../../assests/images/image-pick/tom.png';
-import imgCa from '../../../assests/images/image-pick/ca.png';
-import imgCua from '../../../assests/images/image-pick/cua.png';
+import imgTom from '../../../assets/images/image-pick/tom.png';
+import imgCa from '../../../assets/images/image-pick/ca.png';
+import imgCua from '../../../assets/images/image-pick/cua.png';
 
 const ResultRoll = () => {
   // Fake data to display

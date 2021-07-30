@@ -1,5 +1,3 @@
-export const BOOKING_STATUS = {
-  PENDING_REVIEW: 'Pending Review',
-  REJECTED: 'Rejected',
-  APPROVED: 'Approved'
+module.exports = {
+  TIME_LEFT_DEFAULT: 60
 }

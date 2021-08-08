@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Layout, Dropdown, Menu } from 'antd';
 import { LogoutOutlined, DownOutlined } from '@ant-design/icons';
+import Cookies from 'js-cookie';
 import '../../assets/style/header.scss';
 import logo from '../../assets/images/logo.jpeg';
 
 export default function Header() {
-  const [currentUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {});
+  const [currentUser] = useState({});
   const history = useHistory();
 
   const handleClickMenu = (e) => {
     if (e.key === 'logout') {
-      localStorage.removeItem('user');
-      localStorage.removeItem('token');
+      Cookies.remove('token');
       history.push('/login');
     }
   }

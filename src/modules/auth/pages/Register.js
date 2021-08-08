@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, Button, Row, Col, Layout, Form, message } from 'antd';
+import { Input, InputNumber, Button, Row, Col, Layout, Form, message } from 'antd';
 import { Link } from 'react-router-dom';
 import { checkConfirmPassword } from '../../../core/helper/validator';
 import { COMMON_ERROR } from '../../../core/constants';
@@ -19,7 +19,7 @@ function Register(props) {
 
   const validationRules = {
     username: [{ required: true, message: 'Tên người dùng không được bỏ trống' }],
-    email: [{ required: true, type: 'email', message: 'Email không hợp lê' }],
+    email: [{ required: true, type: 'email', message: 'Email không hợp lệ' }],
     phoneNumber: [{
       required: true,
       min: 10,
@@ -44,7 +44,7 @@ function Register(props) {
   const onChangeUsername = (e) => setUsername(e.target.value);
   const onChangeEmail = (e) => setEmail(e.target.value);
   const onChangePhoneNumber = (e) => setPhoneNumber(e.target.value);
-  const onChangeAge = (e) => setAge(e.target.value);
+  const onChangeAge = (age) => setAge(age);
   const onChangePassword = (e) => setPassword(e.target.value);
   const onChangeConfirmPassword = (e) => setConfirmPassword(e.target.value);
 
@@ -105,8 +105,8 @@ function Register(props) {
                 />
               </Form.Item>
               <Form.Item name="age" rules={validationRules.age}>
-                <Input
-                  type="number"
+                <InputNumber
+                  className="w-100"
                   placeholder="Tuổi"
                   size="large"
                   onChange={onChangeAge}

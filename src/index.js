@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { initConnection } from './core/services/socket';
-import './assests/style/App.css';
+import './assets/style/App.css';
 
 initConnection();
 

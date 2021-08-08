@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Input, Button, Row, Col, Layout, Form, message } from 'antd';
 import AuthAPIClient from '../services/AuthAPIClient';
 import Footer from '../../../core/components/Footer';
-import logo from '../../../assests/images/logo.jpeg';
+import logo from '../../../assets/images/logo.jpeg';
 
 function Login(props) {
   const [username, setUsername] = useState(null);

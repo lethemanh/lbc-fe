@@ -32,7 +32,6 @@ const Router = ({ children }) => {
             )
           }
         />
-        <Redirect from="/" to="/"/>
       </GuardProvider>
     </BrowserRouter>
   );

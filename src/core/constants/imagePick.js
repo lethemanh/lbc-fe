@@ -1,9 +1,9 @@
-import imgTom from '../../assests/images/image-pick/tom.png';
-import imgCa from '../../assests/images/image-pick/ca.png';
-import imgCua from '../../assests/images/image-pick/cua.png';
-import imgGa from '../../assests/images/image-pick/ga.png';
-import imgNai from '../../assests/images/image-pick/nai.png';
-import imgBau from '../../assests/images/image-pick/bau.png';
+import imgTom from '../../assets/images/image-pick/tom.png';
+import imgCa from '../../assets/images/image-pick/ca.png';
+import imgCua from '../../assets/images/image-pick/cua.png';
+import imgGa from '../../assets/images/image-pick/ga.png';
+import imgNai from '../../assets/images/image-pick/nai.png';
+import imgBau from '../../assets/images/image-pick/bau.png';
 
 const MASCOT = {
   TOM: 'TOM',

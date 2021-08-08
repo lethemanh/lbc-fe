@@ -1,7 +1,7 @@
 import { Layout } from 'antd';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import '../../assests/style/admin-layout.scss';
+import '../../assets/style/admin-layout.scss';
 
 export default function MainLayout({ children }) {
   return (

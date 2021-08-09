@@ -4,12 +4,20 @@
   position: fixed;
   z-index: 1;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
   .logo {
     height: 80%;
   }
   .account {
     color: $white;
     font-size: 20px;
-    float: right;
+  }
+  .info-user {
+    color: $white;
+    font-size: 15px;
+    &-name {
+      margin-right: 20px;
+    }
   }
 }

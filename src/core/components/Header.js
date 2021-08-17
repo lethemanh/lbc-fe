@@ -5,6 +5,7 @@ import { LogoutOutlined, DownOutlined } from '@ant-design/icons';
 import Cookies from 'js-cookie';
 import '../../assets/style/header.scss';
 import logo from '../../assets/images/logo.jpeg';
+import UserInfo from './UserInfo';
 
 export default function Header() {
   const [currentUser] = useState({});
@@ -30,6 +31,7 @@ export default function Header() {
       <Link to="/">
         <img className="logo" alt="logo" src={logo} />
       </Link>
+      <UserInfo/>
       <span className="account">
         <Dropdown overlay={dropDownMenu}>
           <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>

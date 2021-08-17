@@ -1,13 +1,13 @@
 export const user = {
   state: {
-    userInfo: {}
+    userBalance: 0
   },
   reducers: {
-    setUserInfo(state, payload) {
+    setUserBalance(state, payload) {
       return {
         ...state,
-        userInfo: payload
-      };
+        userBalance: payload
+      }
     }
   }
 }

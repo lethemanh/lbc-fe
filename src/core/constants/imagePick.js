@@ -5,13 +5,13 @@ import imgGa from '../../assets/images/image-pick/ga.png';
 import imgNai from '../../assets/images/image-pick/nai.png';
 import imgBau from '../../assets/images/image-pick/bau.png';
 
-const MASCOT = {
-  TOM: 'TOM',
-  CA: 'CA',
-  CUA: 'CUA',
-  GA: 'GA',
-  NAI: 'NAI',
-  BAU: 'BAU'
+export const MASCOT = {
+  TOM: 'Tôm',
+  CA: 'Cá',
+  CUA: 'Cua',
+  GA: 'Gà',
+  NAI: 'Nai',
+  BAU: 'Bầu'
 }
   
 export const imagesPick = [

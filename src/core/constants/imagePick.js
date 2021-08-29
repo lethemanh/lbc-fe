@@ -5,6 +5,15 @@ import imgGa from '../../assets/images/image-pick/ga.png';
 import imgNai from '../../assets/images/image-pick/nai.png';
 import imgBau from '../../assets/images/image-pick/bau.png';
 
+export const IMAGE = {
+  TOM: imgTom,
+  CA: imgCa,
+  CUA: imgCua,
+  GA: imgGa,
+  NAI: imgNai,
+  BAU: imgBau
+}
+
 export const MASCOT = {
   TOM: 'Tôm',
   CA: 'Cá',
@@ -16,32 +25,32 @@ export const MASCOT = {
   
 export const imagesPick = [
   {
-    id: 1,
+    id: 'pick1',
     src: imgTom,
     value: MASCOT.TOM,
   },
   { 
-    id: 2,
+    id: 'pick2',
     src: imgCa,
     value: MASCOT.CA,
   },
   { 
-    id: 3,
+    id: 'pick3',
     src: imgCua,
     value: MASCOT.CUA,
   },
   { 
-    id: 4,
+    id: 'pick4',
     src: imgGa,
     value: MASCOT.GA,
   },
   { 
-    id: 5,
+    id: 'pick5',
     src: imgNai,
     value: MASCOT.NAI,
   },
   { 
-    id: 6,
+    id: 'pick6',
     src: imgBau,
     value: MASCOT.BAU,
   },

@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { COMMON_ERROR } from '../constants';
 import UserAPIClient from '../services/UserAPIClient';
+import { socket } from '../services/socket';
 
 const UserInfo = (props) => {
   const [userName, setUserName] = useState();
   
-  useEffect(async() => {
+  const getInfoUser = async () => {
     try {
       const infoUser = await UserAPIClient.getInfoPlayer();
       setUserName(infoUser.data.username);
@@ -15,6 +16,14 @@ const UserInfo = (props) => {
     } catch (error) {
       message.error(error.message || COMMON_ERROR);
     }
+  }
+
+  useEffect(() => {
+    getInfoUser();
+    
+    socket.on('return-result-to-player', async () => {
+      getInfoUser();  
+    });
   }, []);
 
   return (

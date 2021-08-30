@@ -7,7 +7,30 @@ import { MSGTYPE } from '../../../core/constants/msgtype';
 
 const ChatBox = (props) => {
   const [message, setMessage] = useState('');
+  const [messageList, setMessageList] = useState([]);
   const messageEnd = useRef(null);
+
+  useEffect(() => {
+    socket.on('chat-message', (message) => {
+      addMsgToMsgList(message);
+    });
+    socket.on('connect-success', (message) => {
+      addMsgToMsgList(message);
+    });
+    socket.on('disconnect-success', (message) => {
+      addMsgToMsgList(message);
+    });
+    return function cleanup() {
+      socket.off('chat-message');
+    }
+  }, []);
+
+  function addMsgToMsgList (message) {
+      let temp = messageList;
+      temp.push(message);
+      setMessageList([...temp])
+      scrollToBottom();
+  }
 
   function scrollToBottom () {
     messageEnd.current.scrollIntoView();
@@ -16,6 +39,12 @@ const ChatBox = (props) => {
   function submitMessage (e) {
     e.preventDefault();
     if (message.trim()) {
+      socket.emit('message', {
+        _id : props.userId,
+        username: props.userName,
+        message: message,
+        type: MSGTYPE.CHAT
+      });
       setMessage('');
     }
   }

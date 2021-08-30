@@ -110,27 +110,48 @@ $text-color: #ffffff;
             overflow: hidden;
             overflow-y: scroll;
             .chats {
+                display: flex;
+                flex-direction: column;
                 width: 100%;
                 padding: 0 15px;
                 color: $text-color;
                 position: relative;
                 font-size: 0.9em;
                 height: 100%;
+                &-name {
+                    font-weight: 300;
+                    font-style: italic ;
+                    color: black;
+                };
+                &-roomevent {
+                    font-weight: 300;
+                    font-style: italic ;
+                    &-join {
+                        color: rgb(141, 43, 43);
+                    }
+                    &-left {
+                        color: rgb(51, 49, 49);
+                    };
+                };
                 &-client {
-                    width: 70%;
+                    display: inline-block;
+                    align-self: flex-start;
+                    width: auto;
                     word-wrap: break-word;
                     background-color: $bg-color-chat-client ;
                     padding: 7px 10px;
                     border-radius: 10px 10px 10px 0;
-                    margin: 10px 0;
+                    margin: 5px 0;
                 }
                 &-self {
-                    width: 65%;
+                    display: inline-block;
+                    align-self: flex-end;
+                    width: auto;
                     word-wrap: break-word;
                     background-color: $bg-color-chat-self ;
                     padding: 7px 10px;
                     border-radius: 10px 10px 0 10px;
-                    margin: 5px 0 5px auto;
+                    margin: 5px 0;
                 }
             }
         }

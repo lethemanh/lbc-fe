@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { socket } from '../../../core/services/socket';
 import imgResultWaiting from '../../../assets/images/resultWaiting.jpg';
 import convertResult from '../../../core/helper/convertResult';
+import { v4 } from "uuid";
 
 const ResultRoll = () => {
   const [results, setResults] = useState([]);
@@ -39,7 +40,7 @@ const ResultRoll = () => {
           showResult
           ? <div className="result-box-display">
               {results.map((result) => (
-                <img className='img-result' src={result.src} alt="img-result" value={result.value} key={result.id} />
+                <img className='img-result' src={result.src} alt="img-result" key={v4()} />
               ))}
             </div>
           : <div className="result-box-display">

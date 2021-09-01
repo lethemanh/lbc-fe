@@ -4,37 +4,31 @@ const convertResult = (result) => {
   switch(result) {
     case 1:
       return {
-        id: 'result1',
         src: IMAGE.TOM,
         value: MASCOT.TOM
       };
     case 2:
-      return { 
-        id: 'result2',
+      return {
         src: IMAGE.CA,
         value: MASCOT.CA
       };
     case 3:
-      return { 
-        id: 'result3',
+      return {
         src: IMAGE.CUA,
         value: MASCOT.CUA
       };
     case 4:
-      return { 
-        id: 'result4',
+      return {
         src: IMAGE.GA,
         value: MASCOT.GA,
       };
     case 5:
-      return { 
-        id: 'result5',
+      return {
         src: IMAGE.NAI,
         value: MASCOT.NAI,
       };
     case 6:
-      return { 
-        id: 'result6',
+      return {
         src: IMAGE.BAU,
         value: MASCOT.BAU,
       };

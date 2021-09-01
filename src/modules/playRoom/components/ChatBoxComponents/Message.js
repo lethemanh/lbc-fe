@@ -14,6 +14,8 @@ const Message = (props) => {
         return <Notification username={props.message.username} type={MSGTYPE.CONNECT}/>
       case MSGTYPE.DISCONNECT:
         return <Notification username={props.message.username} type={MSGTYPE.DISCONNECT}/>
+      case MSGTYPE.PLAYER_BET:
+        return <Notification message={props.message.message} type={MSGTYPE.PLAYER_BET}/>
       default:
         return null;
   }

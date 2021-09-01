@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Modal, Form, message, InputNumber } from 'antd';
-import PlayRoomAPIClient from '../services/PlayRoomAPIClient';
 import { socket } from '../../../core/services/socket';
 import convertChoice from '../../../core/helper/convertChoice';
 import { COMMON_ERROR, EMPTY_INPUT_MONEY_ERROR, PLAYER_CHOICE_ERROR } from '../../../core/constants/errorMessage';
@@ -23,7 +22,7 @@ const PickItem = ({ img, isProcessingResult, setIsProcessingResult, userBalance,
         return errorNotification(PLAYER_CHOICE_ERROR);
       }
       setUserBalance(userBalance - amount);
-      await PlayRoomAPIClient.createBet({ choice, amount });
+      socket.emit('bet', {choice, amount});
     } catch (error) {
       message.error(error.message || COMMON_ERROR);
     }
@@ -57,7 +56,7 @@ const PickItem = ({ img, isProcessingResult, setIsProcessingResult, userBalance,
       setIsChoice(false);
       setBetAmount(0);
     });
-  });
+  }, []);
 
   return (
     <>

@@ -2,6 +2,7 @@ import { SendOutlined } from '@ant-design/icons';
 import { socket } from '../../../core/services/socket';
 import { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
+import convertResult from '../../../core/helper/convertResult';
 import Message from './ChatBoxComponents/Message';
 import { MSGTYPE } from '../../../core/constants/msgtype';
 
@@ -12,6 +13,14 @@ const ChatBox = (props) => {
 
   useEffect(() => {
     socket.on('chat-message', (message) => {
+      addMsgToMsgList(message);
+    });
+    socket.on('broadcast-bet', (betData) => {
+      const message = {
+        _id: betData.userId,
+        message: `${betData.username} đã đặt cược ${convertResult(betData.choice)?.value} ${betData.amount}$`,
+        type: MSGTYPE.PLAYER_BET
+      }
       addMsgToMsgList(message);
     });
     socket.on('connect-success', (message) => {

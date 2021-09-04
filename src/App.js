@@ -9,8 +9,10 @@ import { message } from 'antd';
 
 const App = (props) => {
   useEffect(() => {
-    fetchUser();
-  }, []);
+    if (props.token) {
+      fetchUser();
+    }
+  }, [props.token]);
 
   async function fetchUser () {
     try {
@@ -32,9 +34,13 @@ const App = (props) => {
   )}</Router>)
 };
 
+const mapState = (state) => ({
+  token: state.auth.token
+});
+
 const mapDispatch = (dispatch) => ({
   setUserName: dispatch.user.setUserName,
   setUserId: dispatch.user.setUserId
 });
 
-export default connect(null, mapDispatch)(App);
+export default connect(mapState, mapDispatch)(App);

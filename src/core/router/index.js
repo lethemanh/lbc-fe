@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { GuardProvider, GuardedRoute } from 'react-router-guards';
 import requireLogin from './middlewares/auth.guard';
 import routes from './routes';
 
 const GLOBAL_GUARDS = [requireLogin];
 
-const Router = ({ children }) => {
+const Router = ({ children, setToken }) => {
+  useEffect(() => {
+    setToken(Cookies.get('token'));
+  }, []);
+  
   return (
     <BrowserRouter>
       <GuardProvider guards={GLOBAL_GUARDS} loading="Loading...">
@@ -37,8 +43,13 @@ const Router = ({ children }) => {
   );
 };
 
+const mapDispatch = (dispatch) => ({
+  setToken: dispatch.auth.setToken
+});
+
 Router.propTypes = {
   children: PropTypes.func.isRequired,
+  setToken: PropTypes.func.isRequired
 };
 
-export default Router;
+export default connect(null, mapDispatch)(Router);

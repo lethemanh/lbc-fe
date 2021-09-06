@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useHistory } from "react-router-dom";
 import Cookies from 'js-cookie';
 
 const instance = axios.create();
@@ -21,14 +20,11 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   response => response.data,
   error => {
-    if (error.response.status === 401) {
+    if (error?.response?.status === 401) {
       Cookies.remove('token');
-      const history = useHistory();
-      history.push('/login');
-      return Promise.reject(error);
-    } else {
-      return Promise.reject(error);
+      window.location.href = '/login';
     }
+    return Promise.reject(error?.response?.data || {});
   },
 );
 

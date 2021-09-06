@@ -16,7 +16,7 @@ const Router = ({ children, setToken }) => {
   
   return (
     <BrowserRouter>
-      <GuardProvider guards={GLOBAL_GUARDS} loading="Loading...">
+      <GuardProvider guards={GLOBAL_GUARDS}>
         <Route
           render={routeProps =>
             children(

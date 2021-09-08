@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
 import { Spin } from 'antd';
+import { initConnection } from './core/services/socket';
 import UserAPIClient from '../src/core/services/UserAPIClient';
 import Router from './core/router';
 import Page from './core/components/Page';
@@ -12,7 +14,7 @@ const App = (props) => {
   const [isFetchingUserProfile, setIsFetchingUserProfile] = useState(true);
 
   useEffect(() => {
-    if (props.token) {
+    if (props.token || Cookies.get('token')) {
       fetchUser();
     } else {
       setIsFetchingUserProfile(false);
@@ -23,6 +25,7 @@ const App = (props) => {
     try {
       setIsFetchingUserProfile(true);
       const infoUser = await UserAPIClient.getInfoPlayer();
+      initConnection();
       props.setUserName(infoUser.data.username);
       props.setUserId(infoUser.data._id);
     } catch (error) {

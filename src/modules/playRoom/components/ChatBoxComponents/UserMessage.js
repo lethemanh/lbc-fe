@@ -1,10 +1,29 @@
+import { connect } from 'react-redux';
+
 const UserMessage = (props) => {
+  if (!props.message || !props.message._id) {
+    return null;
+  }
   return (
     <div>
-      <div className='chats-name'>{props.message.username}</div>
-      <div className="text">{props.message.message}</div>
+    { props.userId === props.message._id ?
+      <div>
+        <div className="text">{props.message.message}</div>
+      </div>
+      :
+      <div>
+        <div className='chats-name'>{props.message.username}</div>
+        <div className="text">{props.message.message}</div>
+      </div>
+    }
     </div>
   )
 }
 
-export default UserMessage;
+const mapState = (state) => ({
+  userId: state.user.userId
+});
+
+export default connect(
+  mapState
+)(UserMessage);

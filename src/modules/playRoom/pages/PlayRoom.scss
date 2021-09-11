@@ -1,9 +1,9 @@
 $bg-game-color: #77b3d4c7;
 $bg-color-box : #dfe6e9;
 $bg-color-box-client : #77b3d4;
-$bg-color-box-form : #2d3436;
+$bg-color-box-form : #dfe6e9;
 $bg-color-box-form-input : #4f5d7321;
-$bg-color-chat-client : #4f5d73c7;
+$bg-color-chat-client : #4f5d7321;
 $bg-color-chat-self : #77b3d4c7;
 $bg-color-result-container: #dfe6e9;
 $bg-color-head-result: #77b3d4;
@@ -11,6 +11,11 @@ $bg-color-countdown: #dfe6e9;
 $border-countdown-color: #77b3d4;
 $choice-color: #16a085;
 $text-color: #ffffff;
+$text-color-input: rgba(0,0,0,0.6);
+$text-color-message: rgba(0,0,0,0.85);
+$text-color-user-name: #379c60;
+$text-color-join:rgb(141, 43, 43);
+$text-color-left:rgb(51, 49, 49);
 
 .modal-bet-input {
     .ant-input-number {
@@ -99,6 +104,7 @@ $text-color: #ffffff;
                 padding: 5px;
                 margin-top: 15px;
                 h2 {
+                    justify-self: center;
                     font-weight: 650;
                     color: $text-color;
                 }
@@ -114,23 +120,22 @@ $text-color: #ffffff;
                 flex-direction: column;
                 width: 100%;
                 padding: 0 15px;
-                color: $text-color;
+                color: $text-color-message;
                 position: relative;
                 font-size: 0.9em;
                 height: 100%;
                 &-name {
-                    font-weight: 300;
-                    font-style: italic ;
-                    color: black;
+                    font-weight: bold;
+                    color: $text-color-user-name;
                 };
                 &-roomevent {
                     font-weight: 300;
                     font-style: italic ;
                     &-join {
-                        color: rgb(141, 43, 43);
+                        color: $text-color-join;
                     }
                     &-left {
-                        color: rgb(51, 49, 49);
+                        color: $text-color-left;
                     };
                 };
                 &-client {
@@ -170,7 +175,7 @@ $text-color: #ffffff;
                 height: 100%;
                 background-color: $bg-color-box-form-input;
                 border-radius: 50px;
-                color: $text-color;
+                color: $text-color-input;
                 font-size: 1.2em;
                 padding: 0 15px;
                 border:  transparent;
@@ -187,7 +192,7 @@ $text-color: #ffffff;
                 &-icon {
                     font-size: 25px;
                     margin-left: 10px;
-                    color: $text-color;
+                    color: $text-color-input;
                 }
             }
         }
